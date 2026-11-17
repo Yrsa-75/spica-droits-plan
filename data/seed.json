@@ -1,0 +1,2016 @@
+{
+ "meta": {
+  "rate": 410,
+  "reserve": 0.2,
+  "updatedAt": "2026-11-17",
+  "version": 1
+ },
+ "statuses": [
+  "À cadrer",
+  "Cadré",
+  "En construction",
+  "En test",
+  "Validé",
+  "En production"
+ ],
+ "lots": [
+  {
+   "id": "C",
+   "name": "Cadrage",
+   "sub": "Phase en cours : analyse des exports Dabaz, recueil des besoins, cahier des charges, chiffrage",
+   "color": "cadrage"
+  },
+  {
+   "id": "S",
+   "name": "Socle",
+   "sub": "Fondations techniques, comptes et niveaux d'accès, historique, listes de référence",
+   "color": "socle"
+  },
+  {
+   "id": "K",
+   "name": "Catalogue",
+   "sub": "Sociétés, programmes, films, séries, épisodes, intervenants et diffusions",
+   "color": "catalogue"
+  },
+  {
+   "id": "D",
+   "name": "Contrats et droits",
+   "sub": "Contrats, ventes, cessions, mandats, disponibilité calculée, échéances et restrictions juridiques",
+   "color": "droits"
+  },
+  {
+   "id": "F",
+   "name": "Finances",
+   "sub": "Coûts, financements, recettes, amortissement et relevés aux ayants droit",
+   "color": "finances"
+  },
+  {
+   "id": "R",
+   "name": "Reprise des données",
+   "sub": "Import des exports Dabaz et du fichier Excel 2024+, nettoyage, contrôle croisé et bascule",
+   "color": "reprise"
+  },
+  {
+   "id": "T",
+   "name": "Transverse",
+   "sub": "Design, qualité, sécurité, confidentialité, documentation, formation et pilotage",
+   "color": "transverse"
+  },
+  {
+   "id": "X",
+   "name": "Plus tard ou pas encore défini",
+   "sub": "Idées identifiées, hors chiffrage à ce stade : à décider avec SPICA",
+   "color": "adefinir"
+  }
+ ],
+ "blocs": [
+  {
+   "id": "C01",
+   "lot": "C",
+   "name": "Analyse des exports Dabaz",
+   "days": null,
+   "status": "En construction",
+   "scope": true,
+   "obj": "Comprendre ce que contient Dabaz aujourd'hui et ce qu'il faudra reprendre.",
+   "in": "Exports Dabaz fournis par SPICA",
+   "out": "Synthèse des données, liste des anomalies, exports manquants à demander",
+   "deps": [],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "État des productions et films : PATRICK SPICA PRODUCTIONS (592 films, 58 colonnes)",
+     "f": "d"
+    },
+    {
+     "t": "État des productions et films : PATRICK SPICA PRESSE (1 121 films, 58 colonnes)",
+     "f": "d"
+    },
+    {
+     "t": "Disponibilité du catalogue au 16/11/2026 (1 363 films, 50 colonnes)",
+     "f": "d"
+    },
+    {
+     "t": "Croisement catalogue et disponibilité : 421 titres absents de la disponibilité, 74 titres absents du catalogue",
+     "f": "d"
+    },
+    {
+     "t": "Export des ventes et cessions de droits (acheteur, période, exclusivité, territoires, médias, langues)",
+     "f": "q"
+    },
+    {
+     "t": "Export des contrats d'auteurs, réalisateurs et coproducteurs",
+     "f": "q"
+    },
+    {
+     "t": "Catalogue complet sans filtre (tous états, fiches archivées)",
+     "f": "q"
+    },
+    {
+     "t": "Fichier Excel de suivi depuis 2024",
+     "f": "q"
+    },
+    {
+     "t": "Liste de tous les états et exports que Dabaz sait produire",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "C02",
+   "lot": "C",
+   "name": "Recueil des besoins",
+   "days": null,
+   "status": "En construction",
+   "scope": true,
+   "obj": "Savoir précisément qui utilise l'outil, pour quoi faire, et ce qui est attendu de la nouvelle plateforme.",
+   "in": "Échanges avec les équipes SPICA, fiche détaillée d'un documentaire",
+   "out": "Liste de fonctionnalités validée, classée en indispensable et plus tard",
+   "deps": [
+    "C01"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Liste de fonctionnalités proposée par YRSA (ce plan)",
+     "f": "d"
+    },
+    {
+     "t": "Liste de fonctionnalités de Ju",
+     "f": ""
+    },
+    {
+     "t": "Liste de fonctionnalités attendues par SPICA",
+     "f": "q"
+    },
+    {
+     "t": "Fiche détaillée complète d'un documentaire, avec captures de chaque onglet Dabaz",
+     "f": "q"
+    },
+    {
+     "t": "Deux ou trois contrats types : auteur-réalisateur, préachat diffuseur, mandat de distribution",
+     "f": "q"
+    },
+    {
+     "t": "Utilisateurs : combien, quelles équipes, quelles tâches au quotidien",
+     "f": "q"
+    },
+    {
+     "t": "Raison principale du départ de Dabaz et points à ne surtout pas perdre",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "C03",
+   "lot": "C",
+   "name": "Cahier des charges",
+   "days": null,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Décrire exactement ce qui sera construit en v1, avec les hypothèses et les questions ouvertes.",
+   "in": "Analyse des exports, recueil des besoins",
+   "out": "Cahier des charges validé par SPICA",
+   "deps": [
+    "C01",
+    "C02"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Modèle de données cible : sociétés, programmes, films, épisodes, tiers, contrats, cessions",
+     "f": ""
+    },
+    {
+     "t": "Règles de calcul de la disponibilité, validées sur des cas réels SPICA",
+     "f": "q"
+    },
+    {
+     "t": "Périmètre financier exact : ce que SPICA suit aujourd'hui dans Dabaz et ce qui est attendu",
+     "f": "q"
+    },
+    {
+     "t": "Version v0.1 du cahier des charges",
+     "f": ""
+    },
+    {
+     "t": "Version validée",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "C04",
+   "lot": "C",
+   "name": "Rétroplanning et chiffrage",
+   "days": null,
+   "status": "En construction",
+   "scope": true,
+   "obj": "Chiffrer chaque bloc en jours et caler les jalons.",
+   "in": "Liste des blocs",
+   "out": "Plan en ligne, chiffrage par bloc, jalons",
+   "deps": [
+    "C02"
+   ],
+   "cx": "simple",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Liste des blocs et sous-blocs v0",
+     "f": "d"
+    },
+    {
+     "t": "Chiffrage v0 : 410 € HT par jour, réserve de 20 %",
+     "f": "d"
+    },
+    {
+     "t": "Plan en ligne partagé avec SPICA",
+     "f": ""
+    },
+    {
+     "t": "Ajustement du chiffrage après réception des exports manquants",
+     "f": "t"
+    },
+    {
+     "t": "Jalons recalés sur la date de fin du contrat Dabaz",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "C05",
+   "lot": "C",
+   "name": "Devis et lancement",
+   "days": null,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Formaliser l'engagement et organiser le démarrage.",
+   "in": "Chiffrage validé",
+   "out": "Devis signé, calendrier de démarrage",
+   "deps": [
+    "C04"
+   ],
+   "cx": "simple",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Devis envoyé (cible : vendredi 20/11/2026)",
+     "f": ""
+    },
+    {
+     "t": "Découpage du devis : partie ferme et partie estimative à confirmer après cadrage",
+     "f": "t"
+    },
+    {
+     "t": "Date de fin ou de renouvellement du contrat Dabaz",
+     "f": "q"
+    },
+    {
+     "t": "Interlocuteur référent chez SPICA pour valider chaque bloc",
+     "f": "q"
+    },
+    {
+     "t": "Devis signé",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "S00",
+   "lot": "S",
+   "name": "Socle technique",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Poser les fondations : application, base de données, hébergement, sauvegardes, environnements de test et de production.",
+   "in": "Aucune",
+   "out": "Application vide déployée, base sécurisée, déploiement automatique",
+   "deps": [],
+   "cx": "simple",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Application Next.js hébergée sur Vercel (région Paris)",
+     "f": ""
+    },
+    {
+     "t": "Base Supabase dédiée, séparée de SPICA Manager, hébergée en Union européenne",
+     "f": ""
+    },
+    {
+     "t": "Deux environnements : test et production",
+     "f": ""
+    },
+    {
+     "t": "Sauvegardes quotidiennes et procédure de restauration testée",
+     "f": ""
+    },
+    {
+     "t": "Déploiement automatique à chaque version, retour arrière en un clic",
+     "f": ""
+    },
+    {
+     "t": "Supervision des erreurs et alertes",
+     "f": ""
+    },
+    {
+     "t": "Nom de domaine et adresse d'envoi des emails",
+     "f": "tq"
+    },
+    {
+     "t": "Nom définitif de la plateforme",
+     "f": "tq"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "S01",
+   "lot": "S",
+   "name": "Comptes et niveaux d'accès",
+   "days": 7,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Gérer les utilisateurs avec quatre niveaux, tous pilotés par le super administrateur.",
+   "in": "Invitations envoyées par le super administrateur",
+   "out": "Connexion sécurisée, quatre niveaux d'accès testés",
+   "deps": [
+    "S00"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Quatre niveaux : super administrateur, administrateur, gestionnaire, lecteur",
+     "f": ""
+    },
+    {
+     "t": "Accès par niveau uniquement : tout compte voit l'ensemble des données, le niveau décide de ce qu'il peut modifier",
+     "f": ""
+    },
+    {
+     "t": "Tableau précis des actions permises par niveau, validé par SPICA",
+     "f": "q"
+    },
+    {
+     "t": "Invitation par email, activation et désactivation d'un compte",
+     "f": ""
+    },
+    {
+     "t": "Écran d'administration des comptes réservé au super administrateur",
+     "f": ""
+    },
+    {
+     "t": "Règles d'accès appliquées dans la base elle-même, testées automatiquement",
+     "f": ""
+    },
+    {
+     "t": "Mot de passe oublié, déconnexion automatique après inactivité",
+     "f": ""
+    },
+    {
+     "t": "Double authentification pour les administrateurs",
+     "f": "t"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "S02",
+   "lot": "S",
+   "name": "Historique des modifications",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Savoir qui a modifié quoi et quand, sur chaque fiche, et pouvoir revenir en arrière.",
+   "in": "Toutes les modifications de la plateforme",
+   "out": "Journal consultable, historique par fiche",
+   "deps": [
+    "S00",
+    "S01"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Journal en ajout seul : auteur, date, valeur avant et après",
+     "f": ""
+    },
+    {
+     "t": "Onglet Historique sur chaque fiche (film, contrat, cession, tiers)",
+     "f": ""
+    },
+    {
+     "t": "Restauration d'une valeur précédente",
+     "f": ""
+    },
+    {
+     "t": "Page de recherche dans le journal, avec filtres et export",
+     "f": ""
+    },
+    {
+     "t": "Marquage des modifications faites par import",
+     "f": ""
+    },
+    {
+     "t": "Durée de conservation du journal",
+     "f": "t"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "S03",
+   "lot": "S",
+   "name": "Listes de référence",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Remplacer le texte libre par des listes maîtrisées, indispensables au calcul de la disponibilité.",
+   "in": "Valeurs présentes dans Dabaz",
+   "out": "Listes administrables : territoires, médias, langues, rôles, types",
+   "deps": [
+    "S00"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Territoires avec regroupements : monde, zones, pays, et exclusions (monde hors France)",
+     "f": ""
+    },
+    {
+     "t": "Médias et modes d'exploitation en arborescence : télévision gratuite et payante, rattrapage, vidéo à la demande, YouTube, etc.",
+     "f": ""
+    },
+    {
+     "t": "Langues et versions : version française, version internationale, sous-titres, doublages",
+     "f": ""
+    },
+    {
+     "t": "Rôles des intervenants : auteur, réalisateur, journaliste, compositeur, diffuseur, coproducteur, distributeur",
+     "f": ""
+    },
+    {
+     "t": "Types de contrat, types de vente, genres, états d'un film",
+     "f": ""
+    },
+    {
+     "t": "Écran d'administration des listes, avec fusion de doublons",
+     "f": ""
+    },
+    {
+     "t": "Reprise exacte des listes de territoires et de médias utilisées dans Dabaz",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "S04",
+   "lot": "S",
+   "name": "Tableaux, filtres et exports",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Construire une fois les écrans de liste qui serviront partout : tri, filtres, colonnes, export.",
+   "in": "Données de tous les blocs",
+   "out": "Composant de liste commun, export Excel",
+   "deps": [
+    "S00"
+   ],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Tableaux rapides sur plusieurs milliers de lignes",
+     "f": ""
+    },
+    {
+     "t": "Filtres combinables et tri sur toutes les colonnes",
+     "f": ""
+    },
+    {
+     "t": "Choix des colonnes affichées",
+     "f": ""
+    },
+    {
+     "t": "Vues enregistrées, personnelles ou partagées",
+     "f": ""
+    },
+    {
+     "t": "Export Excel de la vue affichée",
+     "f": ""
+    },
+    {
+     "t": "Affichage adapté aux écrans de portable et de tablette",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "K01",
+   "lot": "K",
+   "name": "Structure du catalogue",
+   "days": 8,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Organiser le catalogue comme SPICA le pense : société, programme, film, série, saison, épisode.",
+   "in": "Référentiels",
+   "out": "Arborescence complète navigable",
+   "deps": [
+    "S01",
+    "S03",
+    "S04"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Sociétés productrices : PATRICK SPICA PRODUCTIONS et PATRICK SPICA PRESSE, d'autres possibles",
+     "f": ""
+    },
+    {
+     "t": "Titulaire des droits distinct du producteur délégué",
+     "f": ""
+    },
+    {
+     "t": "Programmes ou collections (Capital, Zone Interdite, 100% Mag, unitaires, etc.)",
+     "f": ""
+    },
+    {
+     "t": "Films unitaires",
+     "f": ""
+    },
+    {
+     "t": "Séries, saisons et épisodes individualisés (aujourd'hui une série tient souvent sur une seule ligne)",
+     "f": ""
+    },
+    {
+     "t": "États d'un film : développement, production, exploitation, archivé",
+     "f": ""
+    },
+    {
+     "t": "Catalogues tiers représentés (exemple : CATALOGUE BLUE BIRD)",
+     "f": "q"
+    },
+    {
+     "t": "Création, duplication, archivage d'une fiche",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "K02",
+   "lot": "K",
+   "name": "Fiche film complète",
+   "days": 9,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Réunir sur une seule fiche tout ce qui identifie et décrit un film.",
+   "in": "Structure du catalogue",
+   "out": "Fiche film par onglets, contrôles de saisie",
+   "deps": [
+    "K01"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Identité : références internes, titres de production, de diffusion, digital, anciens titres",
+     "f": ""
+    },
+    {
+     "t": "Numéro ISAN (identifiant international de l'œuvre) avec contrôle du format, niveaux série, saison, épisode",
+     "f": ""
+    },
+    {
+     "t": "Immatriculation au registre du CNC et autres numéros officiels",
+     "f": "q"
+    },
+    {
+     "t": "Durées et PAD (prêt à diffuser) : date, durée, saisie dans un format unique",
+     "f": ""
+    },
+    {
+     "t": "Versions disponibles : française, internationale, autres langues",
+     "f": ""
+    },
+    {
+     "t": "Éléments techniques : fichier maître, numéro de master, plan seul",
+     "f": ""
+    },
+    {
+     "t": "Synopsis, mots clés, genre, année de production",
+     "f": ""
+    },
+    {
+     "t": "Onglets de la fiche calqués sur la fiche détaillée Dabaz",
+     "f": "q"
+    },
+    {
+     "t": "Notes libres séparées des alertes juridiques",
+     "f": ""
+    },
+    {
+     "t": "Champs personnalisés ajoutables par le super administrateur",
+     "f": "t"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "K03",
+   "lot": "K",
+   "name": "Annuaire des tiers et génériques",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Tenir un annuaire unique des personnes et sociétés, relié aux films par un rôle.",
+   "in": "Ayants droit présents dans Dabaz (615 noms)",
+   "out": "Annuaire dédoublonné, générique par film",
+   "deps": [
+    "K01",
+    "S03"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Fiche personne et fiche société (diffuseur, coproducteur, distributeur, société d'auteurs)",
+     "f": ""
+    },
+    {
+     "t": "Lien film et tiers avec un rôle : auteur, réalisateur, journaliste, compositeur, etc.",
+     "f": ""
+    },
+    {
+     "t": "Détection et fusion des doublons (même personne écrite de deux façons)",
+     "f": ""
+    },
+    {
+     "t": "Filmographie d'un tiers : tous ses films, contrats et cessions",
+     "f": ""
+    },
+    {
+     "t": "Coordonnées et informations administratives des tiers",
+     "f": "t"
+    },
+    {
+     "t": "Séparation claire entre intervenants du film et partenaires commerciaux",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "K04",
+   "lot": "K",
+   "name": "Recherche dans le catalogue",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Retrouver un film en quelques secondes, quel que soit le critère.",
+   "in": "Catalogue, tiers",
+   "out": "Recherche globale et recherche avancée",
+   "deps": [
+    "K02",
+    "K03",
+    "S04"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Recherche instantanée par titre, ancien titre, référence, ISAN, nom d'un intervenant",
+     "f": ""
+    },
+    {
+     "t": "Recherche tolérante aux accents et aux fautes de frappe",
+     "f": ""
+    },
+    {
+     "t": "Recherche avancée multicritère : programme, année, durée, diffuseur, version, état",
+     "f": ""
+    },
+    {
+     "t": "Recherche dans les synopsis et les mots clés",
+     "f": ""
+    },
+    {
+     "t": "Résultats exportables et enregistrables comme vue",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "K05",
+   "lot": "K",
+   "name": "Diffusions",
+   "days": 4,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Garder la trace des diffusions de chaque film.",
+   "in": "Dates de diffusion présentes dans Dabaz",
+   "out": "Historique des diffusions par film",
+   "deps": [
+    "K02",
+    "K03"
+   ],
+   "cx": "simple",
+   "crit": "Souhaitable",
+   "subs": [
+    {
+     "t": "Première diffusion : date, chaîne, titre de diffusion",
+     "f": ""
+    },
+    {
+     "t": "Rediffusions",
+     "f": ""
+    },
+    {
+     "t": "Compteur de diffusions consommées par rapport au nombre prévu au contrat",
+     "f": ""
+    },
+    {
+     "t": "Suivi systématique des rediffusions souhaité par SPICA",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D01",
+   "lot": "D",
+   "name": "Contrats d'acquisition des droits",
+   "days": 10,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Enregistrer ce que SPICA détient : contrats avec les auteurs, réalisateurs, coproducteurs et fournisseurs de contenus.",
+   "in": "Contrats papier ou PDF, données Dabaz",
+   "out": "Contrats saisis, droits détenus par film",
+   "deps": [
+    "K02",
+    "K03",
+    "S03"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Fiche contrat : type, parties, date de signature, films concernés",
+     "f": ""
+    },
+    {
+     "t": "Droits acquis : durée, territoires, médias, langues",
+     "f": ""
+    },
+    {
+     "t": "Rémunération prévue : forfait, pourcentage, assiette",
+     "f": ""
+    },
+    {
+     "t": "Coproductions : parts de chaque coproducteur",
+     "f": ""
+    },
+    {
+     "t": "Un contrat peut couvrir plusieurs films, un film plusieurs contrats",
+     "f": ""
+    },
+    {
+     "t": "Contenus tiers à durée limitée dans un film : archives, musiques, photos",
+     "f": "q"
+    },
+    {
+     "t": "Autorisations de tournage des personnes filmées",
+     "f": "q"
+    },
+    {
+     "t": "Modèle exact des contrats amont suivis aujourd'hui dans Dabaz",
+     "f": "tq"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D02",
+   "lot": "D",
+   "name": "Ventes, cessions et mandats",
+   "days": 12,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Enregistrer ce que SPICA a cédé : préachats, ventes, cessions de droits et mandats de distribution.",
+   "in": "Contrats de vente, mandats, données Dabaz",
+   "out": "Ventes et cessions saisies, rattachées aux films",
+   "deps": [
+    "K02",
+    "K03",
+    "S03"
+   ],
+   "cx": "ambitieux",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Vente : acheteur, type (préachat, coproduction diffuseur, cession, mandat), référence, intitulé, montant",
+     "f": ""
+    },
+    {
+     "t": "Cession de droits : début, fin, exclusivité, territoires, médias, langues",
+     "f": ""
+    },
+    {
+     "t": "Durée exprimée en dates ou relative (36 mois à compter de la première diffusion)",
+     "f": ""
+    },
+    {
+     "t": "Nombre de diffusions autorisées, fenêtre de rattrapage",
+     "f": ""
+    },
+    {
+     "t": "Périodes de gel et droits de priorité",
+     "f": ""
+    },
+    {
+     "t": "Cession portant sur une partie des épisodes d'une série",
+     "f": ""
+    },
+    {
+     "t": "Mandats de distribution : mandataire, territoires, durée, commission, frais",
+     "f": ""
+    },
+    {
+     "t": "Mandats couvrant tout un lot de films (exemple : mandats Java Films)",
+     "f": ""
+    },
+    {
+     "t": "Options et reconductions tacites",
+     "f": ""
+    },
+    {
+     "t": "Saisie rapide d'une même cession sur plusieurs films",
+     "f": ""
+    },
+    {
+     "t": "Structure exacte des ventes et cessions dans Dabaz",
+     "f": "tq"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D03",
+   "lot": "D",
+   "name": "Moteur de disponibilité",
+   "days": 12,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Répondre à la question centrale : ce film est-il libre pour tel territoire, tel média, telle langue, à telle date ?",
+   "in": "Droits acquis, cessions, mandats, restrictions",
+   "out": "Disponibilité calculée, expliquée, exportable",
+   "deps": [
+    "D01",
+    "D02",
+    "S03"
+   ],
+   "cx": "ambitieux",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Calcul de la disponibilité par film selon territoire, média, langue, période et exclusivité",
+     "f": ""
+    },
+    {
+     "t": "Explication du résultat : quelle cession bloque, jusqu'à quand",
+     "f": ""
+    },
+    {
+     "t": "Recherche inversée : tous les films libres pour une demande donnée",
+     "f": ""
+    },
+    {
+     "t": "Export Disponibilité du catalogue équivalent à celui de Dabaz",
+     "f": ""
+    },
+    {
+     "t": "Détection des conflits à la saisie d'une nouvelle cession",
+     "f": ""
+    },
+    {
+     "t": "Prise en compte des regroupements de territoires et de l'arborescence des médias",
+     "f": ""
+    },
+    {
+     "t": "Prise en compte des restrictions juridiques",
+     "f": ""
+    },
+    {
+     "t": "Frise chronologique des droits d'un film",
+     "f": ""
+    },
+    {
+     "t": "Jeu de tests automatiques sur des cas réels",
+     "f": ""
+    },
+    {
+     "t": "Règles métier validées avec SPICA sur une vingtaine de films",
+     "f": "q"
+    },
+    {
+     "t": "Effet d'un mandat non exclusif sur la disponibilité",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D04",
+   "lot": "D",
+   "name": "Échéancier et alertes",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Ne plus découvrir une fin de droits après coup.",
+   "in": "Dates des contrats, cessions, mandats et options",
+   "out": "Calendrier des échéances, alertes par email",
+   "deps": [
+    "D01",
+    "D02"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Calendrier des échéances : fins de droits, fins de mandat, options, reconductions",
+     "f": ""
+    },
+    {
+     "t": "Vue des droits qui se libèrent dans les 3, 6 et 12 mois",
+     "f": ""
+    },
+    {
+     "t": "Alertes par email, délais réglables",
+     "f": ""
+    },
+    {
+     "t": "Destinataires des alertes par type d'échéance",
+     "f": "t"
+    },
+    {
+     "t": "Suivi : échéance traitée, reportée, sans suite",
+     "f": ""
+    },
+    {
+     "t": "Export du calendrier",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D05",
+   "lot": "D",
+   "name": "Restrictions juridiques",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Sortir les alertes juridiques des titres et des notes pour en faire des informations fiables et visibles.",
+   "in": "Drapeaux et notes juridiques présents dans Dabaz",
+   "out": "Restrictions structurées, visibles partout où le film apparaît",
+   "deps": [
+    "K02"
+   ],
+   "cx": "moyen",
+   "crit": "Réglementaire",
+   "subs": [
+    {
+     "t": "Fiche restriction : nature (droit à l'image, litige, retrait d'accord), date, description",
+     "f": ""
+    },
+    {
+     "t": "Niveaux : information, exploitation sous conditions, ne plus diffuser",
+     "f": ""
+    },
+    {
+     "t": "Version concernée et version corrigée (floutage, relivraison)",
+     "f": ""
+    },
+    {
+     "t": "Bandeau d'alerte sur la fiche film, dans les listes et dans la disponibilité",
+     "f": ""
+    },
+    {
+     "t": "Suivi : en cours, réglé, avec date et pièce jointe",
+     "f": ""
+    },
+    {
+     "t": "Les noms de particuliers cités dans les litiges sont des données personnelles : règles de conservation",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "D06",
+   "lot": "D",
+   "name": "Documents et contrats PDF",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Retrouver le contrat signé depuis la fiche, sans chercher dans les dossiers.",
+   "in": "PDF des contrats et pièces",
+   "out": "Documents classés, attachés aux fiches",
+   "deps": [
+    "S01",
+    "D01",
+    "D02"
+   ],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Dépôt de fichiers attachés à un film, un contrat, une vente ou une restriction",
+     "f": ""
+    },
+    {
+     "t": "Types de document : contrat, avenant, attestation, justificatif",
+     "f": ""
+    },
+    {
+     "t": "Aperçu dans le navigateur, téléchargement",
+     "f": ""
+    },
+    {
+     "t": "Versions successives d'un même document",
+     "f": ""
+    },
+    {
+     "t": "Stockage sécurisé hébergé en Union européenne",
+     "f": ""
+    },
+    {
+     "t": "Volume de documents existants à reprendre et emplacement actuel",
+     "f": "tq"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "F01",
+   "lot": "F",
+   "name": "Coûts et plan de financement",
+   "days": 8,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Suivre ce que coûte chaque film et comment il est financé.",
+   "in": "Données financières Dabaz, saisie",
+   "out": "Coûts et financements par film, marges calculées",
+   "deps": [
+    "K02",
+    "D02"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Coûts directs, indirects et total, avec coût de référence daté (initial, définitif)",
+     "f": ""
+    },
+    {
+     "t": "Plan de financement : apport diffuseur, coproducteurs, aides, crédit d'impôt, apport producteur",
+     "f": ""
+    },
+    {
+     "t": "Financements acquis et en négociation",
+     "f": ""
+    },
+    {
+     "t": "Marges calculées automatiquement",
+     "f": ""
+    },
+    {
+     "t": "Lien entre un financement et la vente ou le contrat correspondant",
+     "f": ""
+    },
+    {
+     "t": "Exercice comptable de rattachement",
+     "f": ""
+    },
+    {
+     "t": "Niveau de détail attendu sur les coûts : total par film ou par poste",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "F02",
+   "lot": "F",
+   "name": "Recettes d'exploitation",
+   "days": 7,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Suivre ce que rapporte chaque film, vente par vente.",
+   "in": "Ventes, relevés des distributeurs",
+   "out": "Recettes par film, par vente et par période",
+   "deps": [
+    "D02",
+    "F01"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Recettes rattachées à une vente, à un film, à une période",
+     "f": ""
+    },
+    {
+     "t": "Relevés des mandataires : recettes brutes, commission, frais, net revenant à SPICA",
+     "f": ""
+    },
+    {
+     "t": "Répartition d'une recette globale entre plusieurs films",
+     "f": ""
+    },
+    {
+     "t": "Suivi facturé et encaissé",
+     "f": "q"
+    },
+    {
+     "t": "Vue des recettes par film, par acheteur, par territoire, par année",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "F03",
+   "lot": "F",
+   "name": "Amortissement et crédit d'impôt",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Savoir où en est l'amortissement de chaque film.",
+   "in": "Coûts, financements, recettes",
+   "out": "Suivi d'amortissement par film",
+   "deps": [
+    "F01",
+    "F02"
+   ],
+   "cx": "moyen",
+   "crit": "Souhaitable",
+   "subs": [
+    {
+     "t": "Recette nécessaire à l'amortissement, calculée et suivie",
+     "f": ""
+    },
+    {
+     "t": "Crédit d'impôt total et part prise en amortissement",
+     "f": ""
+    },
+    {
+     "t": "Reste à amortir par film et par société",
+     "f": ""
+    },
+    {
+     "t": "Règles de calcul actuellement appliquées par SPICA",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "F04",
+   "lot": "F",
+   "name": "Relevés aux ayants droit",
+   "days": 12,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Calculer ce qui revient à chaque auteur ou coproducteur sur les recettes, et produire le relevé.",
+   "in": "Contrats d'acquisition, recettes",
+   "out": "Relevés périodiques par ayant droit",
+   "deps": [
+    "D01",
+    "F02"
+   ],
+   "cx": "ambitieux",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Règles de partage par contrat : pourcentage, assiette, paliers, minimum garanti",
+     "f": ""
+    },
+    {
+     "t": "Calcul par période : recettes, déductions, part de chaque ayant droit",
+     "f": ""
+    },
+    {
+     "t": "Relevé PDF par ayant droit, historique des relevés",
+     "f": ""
+    },
+    {
+     "t": "Suivi des sommes dues et réglées",
+     "f": ""
+    },
+    {
+     "t": "Contrôle avant envoi : validation par un administrateur",
+     "f": ""
+    },
+    {
+     "t": "SPICA produit-elle aujourd'hui ces relevés avec Dabaz, et pour combien de contrats",
+     "f": "tq"
+    }
+   ],
+   "note": "Bloc le plus incertain du lot Finances : son chiffrage sera confirmé après examen de contrats réels."
+  },
+  {
+   "id": "F05",
+   "lot": "F",
+   "name": "Tableaux de bord financiers",
+   "days": 4,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Donner une vue d'ensemble des chiffres sans passer par Excel.",
+   "in": "Coûts, financements, recettes",
+   "out": "Synthèses par société, programme, année",
+   "deps": [
+    "F01",
+    "F02"
+   ],
+   "cx": "simple",
+   "crit": "Souhaitable",
+   "subs": [
+    {
+     "t": "Synthèse par société, programme, année de production",
+     "f": ""
+    },
+    {
+     "t": "Films les plus rentables, films non amortis",
+     "f": ""
+    },
+    {
+     "t": "Export Excel des synthèses",
+     "f": ""
+    },
+    {
+     "t": "Indicateurs prioritaires pour la direction",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "R01",
+   "lot": "R",
+   "name": "Correspondance des données",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Décider, colonne par colonne, où va chaque information de Dabaz dans la nouvelle plateforme.",
+   "in": "Tous les exports Dabaz, fichier Excel 2024+",
+   "out": "Table de correspondance validée, règles de nettoyage",
+   "deps": [
+    "C01"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Table de correspondance de chaque colonne de chaque export",
+     "f": ""
+    },
+    {
+     "t": "Règles de nettoyage : 10 formats de durée, références en doublon, films sans référence",
+     "f": ""
+    },
+    {
+     "t": "Sort des fiches factices (MODELE, DIVERS WEB, dates de PAD au 01/01/1970)",
+     "f": "q"
+    },
+    {
+     "t": "Sort des champs détournés : commentaires saisis dans ISAN, RCA, numéro d'objet",
+     "f": ""
+    },
+    {
+     "t": "Règle de priorité quand Dabaz et le fichier Excel se contredisent",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "R02",
+   "lot": "R",
+   "name": "Import du catalogue et des tiers",
+   "days": 7,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Charger les 1 700 films et leurs intervenants, proprement.",
+   "in": "États des productions et films, disponibilité du catalogue",
+   "out": "Catalogue et annuaire chargés, rapport d'anomalies",
+   "deps": [
+    "R01",
+    "K02",
+    "K03"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Import rejouable autant de fois que nécessaire",
+     "f": ""
+    },
+    {
+     "t": "Films, programmes, séries et épisodes",
+     "f": ""
+    },
+    {
+     "t": "Intervenants : 615 noms à dédoublonner, rôles repris",
+     "f": ""
+    },
+    {
+     "t": "ISAN : 34 valeurs invalides à corriger ou à signaler",
+     "f": ""
+    },
+    {
+     "t": "Drapeaux et mentions dans les titres convertis en restrictions juridiques",
+     "f": ""
+    },
+    {
+     "t": "Notes : séparation des résidus de l'ancienne migration et des vraies informations",
+     "f": ""
+    },
+    {
+     "t": "Rapport d'anomalies remis à SPICA pour arbitrage",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "R03",
+   "lot": "R",
+   "name": "Import des contrats, cessions et finances",
+   "days": 8,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Charger les droits et les chiffres, ce qui donne sa valeur à la plateforme.",
+   "in": "Exports Dabaz des ventes, cessions, contrats et finances",
+   "out": "Contrats, cessions et finances chargés",
+   "deps": [
+    "R01",
+    "D01",
+    "D02",
+    "F01"
+   ],
+   "cx": "ambitieux",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Ventes et cessions de droits",
+     "f": ""
+    },
+    {
+     "t": "Mandats (192 films concernés, dont une fin de droits écrite en toutes lettres)",
+     "f": ""
+    },
+    {
+     "t": "Contrats d'auteurs et de coproducteurs",
+     "f": ""
+    },
+    {
+     "t": "Coûts, financements, crédit d'impôt",
+     "f": ""
+    },
+    {
+     "t": "Conversion des territoires, médias et langues vers les listes de référence",
+     "f": ""
+    },
+    {
+     "t": "Exports correspondants pas encore reçus : chiffrage à confirmer",
+     "f": "tq"
+    }
+   ],
+   "note": "Chiffrage provisoire : les exports des ventes, cessions et contrats n'ont pas encore été fournis."
+  },
+  {
+   "id": "R04",
+   "lot": "R",
+   "name": "Import du fichier Excel 2024+ et rapprochement",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Compléter et vérifier Dabaz avec le fichier de suivi tenu depuis 2024.",
+   "in": "Fichier Excel 2024+",
+   "out": "Données complétées, écarts arbitrés",
+   "deps": [
+    "R02"
+   ],
+   "cx": "moyen",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Lecture du fichier et rapprochement avec les films déjà importés",
+     "f": ""
+    },
+    {
+     "t": "Écran d'arbitrage : pour chaque écart, garder Dabaz, garder Excel ou corriger",
+     "f": ""
+    },
+    {
+     "t": "Ajout des informations absentes de Dabaz",
+     "f": ""
+    },
+    {
+     "t": "Journal des arbitrages",
+     "f": ""
+    },
+    {
+     "t": "Structure du fichier Excel (pas encore reçu)",
+     "f": "tq"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "R05",
+   "lot": "R",
+   "name": "Contrôle croisé et bascule",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Prouver que la nouvelle plateforme dit la même chose que Dabaz avant de l'arrêter.",
+   "in": "Plateforme chargée, exports Dabaz de contrôle",
+   "out": "Procès-verbal de reprise, bascule réalisée",
+   "deps": [
+    "R02",
+    "R03",
+    "R04",
+    "D03"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Comparaison automatique des totaux : films, tiers, contrats, cessions",
+     "f": ""
+    },
+    {
+     "t": "Comparaison de la disponibilité calculée avec l'export Disponibilité de Dabaz",
+     "f": ""
+    },
+    {
+     "t": "Vérification manuelle d'un échantillon de films par SPICA",
+     "f": ""
+    },
+    {
+     "t": "Période de fonctionnement en double",
+     "f": ""
+    },
+    {
+     "t": "Import final et bascule",
+     "f": ""
+    },
+    {
+     "t": "Durée du fonctionnement en double et date d'arrêt de Dabaz",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T01",
+   "lot": "T",
+   "name": "Design et ergonomie",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Une interface claire, rapide, agréable, que l'on a envie d'ouvrir.",
+   "in": "Charte SPICA",
+   "out": "Système de design, écrans cohérents",
+   "deps": [
+    "S00"
+   ],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Système de design : couleurs, typographies, composants",
+     "f": ""
+    },
+    {
+     "t": "Maquettes des écrans clés validées avant développement : fiche film, cession, disponibilité",
+     "f": ""
+    },
+    {
+     "t": "Mode clair et mode sombre",
+     "f": ""
+    },
+    {
+     "t": "Accessibilité : contrastes, navigation au clavier",
+     "f": ""
+    },
+    {
+     "t": "Charte graphique et logo SPICA à utiliser",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T02",
+   "lot": "T",
+   "name": "Accueil et tableau de bord",
+   "days": 4,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Voir en ouvrant la plateforme ce qui demande une action.",
+   "in": "Échéances, restrictions, historique",
+   "out": "Page d'accueil utile",
+   "deps": [
+    "D04",
+    "D05",
+    "S02"
+   ],
+   "cx": "simple",
+   "crit": "Souhaitable",
+   "subs": [
+    {
+     "t": "Échéances des prochains mois",
+     "f": ""
+    },
+    {
+     "t": "Restrictions juridiques en cours",
+     "f": ""
+    },
+    {
+     "t": "Dernières modifications",
+     "f": ""
+    },
+    {
+     "t": "Chiffres clés du catalogue",
+     "f": ""
+    },
+    {
+     "t": "Fiches incomplètes à compléter",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T03",
+   "lot": "T",
+   "name": "Tests, qualité et sécurité",
+   "days": 8,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Garantir que les calculs sont justes et les accès étanches.",
+   "in": "Tous les blocs",
+   "out": "Tests automatiques, revue de sécurité",
+   "deps": [
+    "S01",
+    "D03"
+   ],
+   "cx": "moyen",
+   "crit": "Bloquant",
+   "subs": [
+    {
+     "t": "Tests automatiques du moteur de disponibilité",
+     "f": ""
+    },
+    {
+     "t": "Tests automatiques des niveaux d'accès",
+     "f": ""
+    },
+    {
+     "t": "Tests des imports sur les fichiers réels",
+     "f": ""
+    },
+    {
+     "t": "Revue de sécurité avant mise en production",
+     "f": ""
+    },
+    {
+     "t": "Tests de rapidité sur le catalogue complet",
+     "f": ""
+    },
+    {
+     "t": "Recette de chaque bloc avec SPICA avant de passer au suivant",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T04",
+   "lot": "T",
+   "name": "Confidentialité et données personnelles",
+   "days": 3,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Traiter correctement les données personnelles : intervenants, personnes citées dans les litiges.",
+   "in": "Données reprises de Dabaz",
+   "out": "Registre, durées de conservation, mentions",
+   "deps": [
+    "S01",
+    "D05"
+   ],
+   "cx": "simple",
+   "crit": "Réglementaire",
+   "subs": [
+    {
+     "t": "Inventaire des données personnelles stockées",
+     "f": ""
+    },
+    {
+     "t": "Durées de conservation et suppression",
+     "f": ""
+    },
+    {
+     "t": "Fiche pour le registre des traitements de SPICA",
+     "f": ""
+    },
+    {
+     "t": "Contrat de sous-traitance entre SPICA et YRSA",
+     "f": "q"
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T05",
+   "lot": "T",
+   "name": "Documentation, formation et mise en production",
+   "days": 5,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Rendre SPICA autonome sur l'outil.",
+   "in": "Plateforme recettée",
+   "out": "Guides, formation, mise en production",
+   "deps": [
+    "R05"
+   ],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Guide utilisateur par niveau d'accès",
+     "f": ""
+    },
+    {
+     "t": "Guide d'administration",
+     "f": ""
+    },
+    {
+     "t": "Documentation technique et procédure de reprise après incident",
+     "f": ""
+    },
+    {
+     "t": "Sessions de formation des équipes",
+     "f": ""
+    },
+    {
+     "t": "Mise en production et suivi rapproché les premières semaines",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "T06",
+   "lot": "T",
+   "name": "Pilotage du projet",
+   "days": 10,
+   "status": "À cadrer",
+   "scope": true,
+   "obj": "Tenir le calendrier, valider bloc par bloc, garder SPICA informée.",
+   "in": "Ce plan",
+   "out": "Points d'avancement, plan à jour",
+   "deps": [],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Point d'avancement régulier avec le référent SPICA",
+     "f": ""
+    },
+    {
+     "t": "Validation formelle de chaque bloc",
+     "f": ""
+    },
+    {
+     "t": "Mise à jour de ce plan à chaque étape",
+     "f": ""
+    },
+    {
+     "t": "Gestion des demandes d'évolution en cours de route",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "X01",
+   "lot": "X",
+   "name": "Lecture des contrats par intelligence artificielle",
+   "days": 12,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Déposer un contrat PDF et obtenir une proposition de saisie : parties, dates, territoires, médias, exclusivité.",
+   "in": "Contrats PDF",
+   "out": "Cession préremplie, à valider par un gestionnaire",
+   "deps": [
+    "D02",
+    "D06"
+   ],
+   "cx": "ambitieux",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Extraction des informations clés d'un contrat",
+     "f": ""
+    },
+    {
+     "t": "Proposition de saisie toujours validée par un humain",
+     "f": ""
+    },
+    {
+     "t": "Lecture en masse des contrats historiques pour compléter la reprise",
+     "f": ""
+    },
+    {
+     "t": "Coût d'usage du service d'intelligence artificielle, refacturé au réel",
+     "f": "t"
+    }
+   ],
+   "note": "Ordre de grandeur. Peut accélérer fortement la reprise si les contrats ne sont pas tous saisis dans Dabaz."
+  },
+  {
+   "id": "X02",
+   "lot": "X",
+   "name": "Assistant de recherche en langage naturel",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Poser une question en français : quels films de moins de 60 minutes sont libres pour la Belgique en vidéo à la demande ?",
+   "in": "Catalogue et moteur de disponibilité",
+   "out": "Réponse sous forme de liste filtrée",
+   "deps": [
+    "D03",
+    "K04"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Traduction de la question en filtres",
+     "f": ""
+    },
+    {
+     "t": "Réponse toujours vérifiable : les filtres appliqués sont affichés",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "X03",
+   "lot": "X",
+   "name": "Pont avec SPICA Manager",
+   "days": 6,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Relier la gestion des droits aux chaînes YouTube : un film dont les droits tombent est signalé côté YouTube, et inversement.",
+   "in": "Références communes aux deux plateformes",
+   "out": "Informations croisées entre les deux outils",
+   "deps": [
+    "K02",
+    "D03"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Rapprochement des films et des vidéos par référence",
+     "f": ""
+    },
+    {
+     "t": "Affichage de la disponibilité YouTube d'un film dans SPICA Manager",
+     "f": ""
+    },
+    {
+     "t": "Alerte quand une vidéo en ligne perd ses droits",
+     "f": ""
+    },
+    {
+     "t": "Référence commune fiable entre Dabaz et SPICA Manager",
+     "f": "q"
+    }
+   ],
+   "note": "Ordre de grandeur."
+  },
+  {
+   "id": "X04",
+   "lot": "X",
+   "name": "Déclarations aux organismes",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Préparer les déclarations aux sociétés d'auteurs et aux organismes professionnels à partir des données déjà saisies.",
+   "in": "Catalogue, génériques, diffusions",
+   "out": "Fichiers de déclaration prêts à déposer",
+   "deps": [
+    "K02",
+    "K03",
+    "K05"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Organismes concernés et formats attendus",
+     "f": "tq"
+    },
+    {
+     "t": "Demandes de numéros ISAN",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "X05",
+   "lot": "X",
+   "name": "Espace distributeur",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Donner à un mandataire un accès limité aux films de son mandat et à leur disponibilité.",
+   "in": "Mandats",
+   "out": "Accès externe en lecture",
+   "deps": [
+    "D02",
+    "D03",
+    "S01"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Compte externe limité à un mandat",
+     "f": ""
+    },
+    {
+     "t": "Export du catalogue du mandat",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "X06",
+   "lot": "X",
+   "name": "Accès restreint par société ou par type de donnée",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Limiter ce qu'un compte voit : une seule société, ou sans les finances, ou sans les notes juridiques.",
+   "in": "Comptes et niveaux d'accès",
+   "out": "Périmètre de visibilité réglable par compte",
+   "deps": [
+    "S01"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Visibilité par société productrice",
+     "f": ""
+    },
+    {
+     "t": "Masquage des données financières",
+     "f": ""
+    },
+    {
+     "t": "Masquage des restrictions juridiques nominatives",
+     "f": ""
+    }
+   ],
+   "note": "Écarté pour la v1 : accès par niveau uniquement. Plus coûteux à ajouter après coup qu'à prévoir dès le socle."
+  },
+  {
+   "id": "X07",
+   "lot": "X",
+   "name": "Liaison avec la comptabilité",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Éviter la double saisie entre la plateforme et l'outil comptable.",
+   "in": "Recettes, coûts",
+   "out": "Export ou synchronisation comptable",
+   "deps": [
+    "F01",
+    "F02"
+   ],
+   "cx": "moyen",
+   "crit": "Hors v1",
+   "subs": [
+    {
+     "t": "Outil comptable utilisé par SPICA",
+     "f": "tq"
+    },
+    {
+     "t": "Export des écritures",
+     "f": ""
+    }
+   ],
+   "note": null
+  },
+  {
+   "id": "X08",
+   "lot": "X",
+   "name": "Hébergement, services tiers et maintenance",
+   "days": null,
+   "status": "À cadrer",
+   "scope": false,
+   "obj": "Coûts récurrents après livraison : hébergement, base de données, emails, maintenance et évolutions.",
+   "in": "Plateforme en production",
+   "out": "Contrat de maintenance, abonnements",
+   "deps": [],
+   "cx": "simple",
+   "crit": "Important",
+   "subs": [
+    {
+     "t": "Abonnements d'hébergement et de base de données, au nom de SPICA ou de YRSA",
+     "f": "tq"
+    },
+    {
+     "t": "Forfait de maintenance et d'évolutions",
+     "f": "t"
+    },
+    {
+     "t": "Engagement de délai d'intervention",
+     "f": "t"
+    }
+   ],
+   "note": "Hors montant de développement. À chiffrer séparément dans le devis."
+  }
+ ],
+ "jalons": [
+  [
+   "2026-11-20",
+   "Devis envoyé",
+   "C"
+  ],
+  [
+   "2026-12-04",
+   "Devis signé, exports manquants reçus, cahier des charges validé",
+   "C"
+  ],
+  [
+   "2026-12-07",
+   "Démarrage du développement",
+   "S"
+  ],
+  [
+   "2027-01-15",
+   "Socle en recette (S00 à S04)",
+   "S"
+  ],
+  [
+   "2027-02-12",
+   "Catalogue en recette, avec les films repris de Dabaz",
+   "K"
+  ],
+  [
+   "2027-04-02",
+   "Contrats, cessions et moteur de disponibilité en recette",
+   "D"
+  ],
+  [
+   "2027-04-30",
+   "Reprise complète des droits et contrôle croisé avec Dabaz",
+   "R"
+  ],
+  [
+   "2027-05-28",
+   "Finances en recette",
+   "F"
+  ],
+  [
+   "2027-06-18",
+   "Fin du fonctionnement en double, mise en production",
+   "T"
+  ]
+ ]
+}
