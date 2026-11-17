@@ -3,6 +3,7 @@ import { createHash, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { createClient } from "@supabase/supabase-js";
 import type { Plan } from "./plan";
+import seed from "@/data/seed.json";
 
 export const ACCESS_COOKIE = "spica_droits_acces";
 
@@ -37,10 +38,22 @@ export async function getCurrentPlan(): Promise<{ data: Plan; created_at: string
   const supabase = createClient(env("NEXT_PUBLIC_SUPABASE_URL"), env("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY"), {
     auth: { persistSession: false },
   });
-  const { data, error } = await supabase.rpc("current_plan", { viewer_secret: env("PLAN_VIEWER_SECRET") });
-  if (error || !data) {
-    console.error("Lecture du plan impossible", error?.message);
+  const viewer_secret = env("PLAN_VIEWER_SECRET");
+  const { data, error } = await supabase.rpc("current_plan", { viewer_secret });
+  if (error) {
+    console.error("Lecture du plan impossible", error.message);
     return null;
   }
-  return data as { data: Plan; created_at: string };
+  if (data) return data as { data: Plan; created_at: string };
+
+  // Aucune version en base : première installation. On charge data/seed.json une seule fois
+  // (la fonction SQL refuse si une version existe déjà ou si le secret est faux).
+  const init = await supabase.rpc("init_plan", { viewer_secret, seed });
+  if (init.error || !init.data) {
+    console.error("Plan vide et chargement initial impossible", init.error?.message);
+    return null;
+  }
+  const again = await supabase.rpc("current_plan", { viewer_secret });
+  if (again.error || !again.data) return null;
+  return again.data as { data: Plan; created_at: string };
 }

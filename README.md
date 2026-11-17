@@ -37,7 +37,7 @@ Familles : C Cadrage (non chiffré), S Socle, K Catalogue, D Contrats et droits,
 
 ## Installer sur une nouvelle base Supabase
 
-1. Exécuter `supabase/migrations/001_plan.sql`.
+1. Exécuter `supabase/migrations/001_plan.sql` puis `002_init_plan.sql`.
 2. Enregistrer l'empreinte SHA-256 de `PLAN_VIEWER_SECRET` dans `plan_settings` (clé `viewer_secret_sha256`).
-3. Insérer `data/seed.json` comme première ligne de `plan_versions`.
+3. Ouvrir la page `/` une première fois : si la base est vide, `data/seed.json` est chargé automatiquement comme version n° 1 (fonction `init_plan`, sans effet ensuite).
 4. Ajouter l'email de l'administrateur dans `plan_admins` et créer son compte dans Authentication > Users.
